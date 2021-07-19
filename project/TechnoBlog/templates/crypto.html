@@ -1,0 +1,102 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title>👨‍💻Techno Blog - {{ title }}</title>
+    {% else %}
+        <title>👨‍💻Techno Blog</title>
+    {% endif %}
+   <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+</head>
+<body style="background-color: black ">
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="/">👨‍💻Techno Blog</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
+              <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              {% if current_user.is_authenticated %}
+                <a class="nav-item nav-link" href="{{ url_for('new_post') }}">New Post</a>
+                <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
+                <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+              {% else %}
+                <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+                <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+        
+        </div>
+</div>
+    </main>
+<div class="jumbotron" style="background-color:black">
+
+    <h1 class="bitcoin">
+
+        Crypto Currency Update
+
+    </h1>
+
+</div>
+  <div class="bitcoin"> <!-- Block parent element -->
+      <img src="{{ url_for('static', filename='download (1).jpg') }}"width="550" 
+     height="300">
+    </div>
+
+
+<div class="container" style="color: white">
+
+   
+    <h3 class="article-content">Current Time : </h3> {{time}}
+    <h4 class="article-content">Name : </h4> {{name}}
+    <h4 class="article-content">Symbol: </h4> {{symbol}}
+    <h4 class="article-content">Market-Pairs : </h4> {{market_pairs}}
+    <h4 class="article-content">Last data was updated at: </h4> {{date_updated}}
+    <h4 class="article-content">Maximum Supply: </h4> {{max_supply}}
+    <h4 class="article-content">Circulating : </h4> {{circulating}}
+    <h4 class="article-content">Total Supply: </h4> {{total_supply}}
+    <h4 class="article-content">Rank : </h4> {{rank}}
+    <h4 class="article-content">Prices (in $) : </h4> {{price}}
+    <h4 class="article-content">Volume: </h4> {{volume}}
+    <h4 class="article-content">Price changing per hour: </h4> {{per_change_1h}}
+    <h4 class="article-content">Price changing per day: </h4> {{per_change_24h}}
+    <h4 class="article-content">Price changing per week: </h4> {{per_change_7d}}
+    <h4 class="article-content">Price changing per month: </h4> {{per_change_30h}}
+    <h4 class="article-content">Market Capital: </h4> {{market_cap}}
+
+   
+
+
+</div>
+
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
